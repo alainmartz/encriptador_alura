@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="header"> 
+            <img class="header_logo" src="./assets/logo.png" 
+            alt="Logo de Alura">
+        </div>    
+    </header>
+    <main>
+        <div class="main">
+            <div class="left_section">
+                <textarea id="input" class="texto_entrada" placeholder="Ingrese su texto"></textarea>
+                <div class="left_footer"> 
+                    <div class="exclamation">
+                        <span>
+                            <img src="./assets/exclamation.png" alt="Signo de exclamación">
+                            Solo letras minúsculas y sin acentos
+                        </span>
+                    </div>
+                    <div class="buttons">
+                        <button id="encriptar" class="encriptador" >Encriptar</button>
+                        <button id="desencriptar" class="desencriptador">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="rigth_section">
+                <img id="mugnieco" class="mugnieco" src="./assets/muñeco.png" alt="Muñeco">
+                <div id="info_der" class="info_der">
+                    <h2 class="tit_der">Ningun mensaje fue encontrado</h2>
+                    <p class="par_der">Ingrese el texto que desea encriptar o desencriptar</p>
+                </div>
+                <textarea id="output" class="texto_salida oculto" placeholder="Ningún mensaje fue encontrado"></textarea>
+                <button id="copiar" class="copiador oculto" >Copiar</button>
+            </div>
+        </div>    
+    </main>
+    <footer>Realizado por Alejandro Martínez</footer>
+    <script src="./javascript/app.js"></script>    
+</body>
+
+</html>
