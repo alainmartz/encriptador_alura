@@ -60,6 +60,7 @@ body{
 
 .texto_entrada::placeholder{
     color: var(--color-azul-letras);
+    font-family: var(--fuente-textos);
 }
 
 .error {
@@ -70,6 +71,17 @@ body{
     margin-top: 8px;
     text-align: center;
     display: none; 
+}
+
+
+.error.oculto {
+    opacity: 0;
+    display: none;
+}
+
+.error:not(.oculto) {
+    opacity: 1;
+    display: block;
 }
 
 .exclamation {
@@ -112,15 +124,25 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 32px;
+    justify-content: center; /*Centra verticalmente los elementos*/
     align-items: center;
+    position: relative; /*Se utiliza con la posición absoluta de sus hijos*/
+    gap: 32px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
-.ajustar {
-    justify-content: space-between;
+.mugnieco, .info_der {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.mugnieco.oculto, .info_der.oculto {
+    display: none;
+}
+
+    
 
 .mugnieco{
     width: 100%;
@@ -128,60 +150,58 @@ body{
 
 .info_der{
     text-align: center;
+    font-family: var(--fuente-textos);
 }
 
-.oculto {
+.texto_salida, .copiador {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.texto_salida.oculto, .copiador.oculto {
+    opacity: 0;
     display: none;
 }
 
+.texto_salida:not(.oculto), .copiador:not(.oculto) {
+    opacity: 1;
+    display: block;
+}
+
 .texto_salida {
-    font-family: var(--fuente-textos);
     width: 100%;
+    font-family: var(--fuente-textos);
     font-size: 32px;
     background: none;
     border: none;
     outline: none;
     resize: none;
+    text-align: center;
 }
 
-
+.texto_salida::placeholder {
+    font-family: var(--fuente-textos);
+}
 
 .copiador {
     background-color: transparent;
+    color: var(--color-azul-letras);
     width: 100%;
-    align-self: center;
+    text-align: center;
     margin-top: auto;
-}
-
-/* Define la opacidad y la transición para los elementos */
-.texto_salida, .copiador, .error {
-    opacity: 0;
-    transition: opacity 0.5s ease; /* Transición suave */
-    pointer-events: none;
-}
-
-
-.texto_salida.oculto, .copiador.oculto, .error.oculto {
-    opacity: 0;
-    pointer-events: none; /* Asegura que no se pueda interactuar con elementos ocultos */
-}
-
-.texto_salida:not(.oculto), .copiador:not(.oculto), .error:not(.oculto) {
-    opacity: 1;
-    display: block;
-    pointer-events: all;
 }
 
 footer {
     align-self: center;
-    font-family: var(--fuente-textos); /* Aplica la fuente "Inter" */
-    font-size: 16px; /* Ajusta el tamaño de la fuente según tu preferencia */
-    text-align: center; /* Centra el texto dentro del footer */
-    width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
-    padding: 20px 0; /* Añade un poco de espacio alrededor del texto */
-    background-color: var(--color-background); /* Opción de fondo, si quieres que el footer tenga un color distinto */
-    color: var(--color-gris-2); /* Color del texto */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+    font-family: var(--fuente-textos); 
+    font-size: 16px; 
+    text-align: center; 
+    width: 100%; 
+    padding: 20px 0; 
+    background-color: var(--color-background); 
+    color: var(--color-negro); 
+    box-sizing: border-box; 
 }
 
 @media screen and (max-width: 768px){
@@ -191,6 +211,12 @@ footer {
         width: auto;
         margin: auto 40px auto 40px;
     }
+
+    .texto_entrada{
+        width: 70%;
+        height: 70%;
+    }
+
     .rigth_section{
         align-self: center;
         height: 90%;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
         <div class="main">
             <div class="left_section">
                 <textarea id="input" class="texto_entrada" cols="1" rows="5" placeholder="Ingrese su texto"></textarea>
-                <p id="error_message" class="error oculto">Solo se permiten letras minúsculas, sin acentos.</p> <!-- Mensaje de error -->
+                <p id="error_message" class="error oculto">Vuelva a escribir la frase.<br>Solo se permiten letras minúsculas.<br>No comenzar por espacio.</p> <!-- Mensaje de error -->
                 <div class="left_footer"> 
                     <div class="exclamation">
                         <span>
@@ -37,7 +37,7 @@
                     <h2 class="tit_der">Ningun mensaje fue encontrado</h2>
                     <p class="par_der">Ingrese el texto que desea encriptar o desencriptar</p>
                 </div>
-                <textarea id="output" class="texto_salida oculto" cols="1" rows="10" placeholder="Ningún mensaje fue encontrado"></textarea>
+                <textarea id="output" class="texto_salida oculto" cols="1" rows="5" placeholder="Ningún mensaje fue encontrado"></textarea>
                 <button id="copiar" class="copiador oculto" >Copiar</button>
             </div>
         </div>    
