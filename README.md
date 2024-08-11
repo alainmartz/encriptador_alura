@@ -3,6 +3,7 @@
 El proyecto consiste en una aplicación de CSS, HTML y JavaScript para realizar un encriptador y desencriptador de texto. Esto se realiza mediante la encriptación de las vocales a frases y viceversa:
 
 |Vocal|Frase|
+|-----|-----|
 |a|ai|
 |e|enter|
 |i|imes|
