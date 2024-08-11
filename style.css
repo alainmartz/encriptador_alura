@@ -6,7 +6,8 @@
     --color-blanco: #FFFFFF;
     --color-gris-1: #495057;
     --color-gris-2: #343A40;
-    --color-desencriptar: #D8DFE8; 
+    --color-desencriptar: #D8DFE8;
+    --color-negro: #000; 
     --fuente-textos: 'Inter';
 }
 
@@ -61,6 +62,20 @@ body{
     color: var(--color-azul-letras);
 }
 
+.error {
+    color: red;
+    font-family: var(--fuente-textos); 
+    font-weight: 700; 
+    font-size: 16px; 
+    margin-top: 8px;
+    text-align: center;
+    display: none; 
+}
+
+.exclamation {
+    color: var(--color-negro);
+    font-family: var(--fuente-textos);
+}
 
 .buttons{
     display: flex;
@@ -97,7 +112,7 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     gap: 32px;
     align-items: center;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -134,11 +149,40 @@ body{
 .copiador {
     background-color: transparent;
     width: 100%;
+    align-self: center;
+    margin-top: auto;
 }
-/*
-footer{
 
-}*/
+/* Define la opacidad y la transición para los elementos */
+.texto_salida, .copiador, .error {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transición suave */
+    pointer-events: none;
+}
+
+
+.texto_salida.oculto, .copiador.oculto, .error.oculto {
+    opacity: 0;
+    pointer-events: none; /* Asegura que no se pueda interactuar con elementos ocultos */
+}
+
+.texto_salida:not(.oculto), .copiador:not(.oculto), .error:not(.oculto) {
+    opacity: 1;
+    display: block;
+    pointer-events: all;
+}
+
+footer {
+    align-self: center;
+    font-family: var(--fuente-textos); /* Aplica la fuente "Inter" */
+    font-size: 16px; /* Ajusta el tamaño de la fuente según tu preferencia */
+    text-align: center; /* Centra el texto dentro del footer */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
+    padding: 20px 0; /* Añade un poco de espacio alrededor del texto */
+    background-color: var(--color-background); /* Opción de fondo, si quieres que el footer tenga un color distinto */
+    color: var(--color-gris-2); /* Color del texto */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+}
 
 @media screen and (max-width: 768px){
     .main {
